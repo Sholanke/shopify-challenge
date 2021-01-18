@@ -12,6 +12,7 @@ input {
   border: none;
   box-shadow: none;
 }
+
 // body {
 //   // background: #e0dbff25;
 // }
@@ -172,6 +173,9 @@ button {
         border-radius: 100vh;
       }
     }
+    ._nom_col {
+      height: fit-content;
+    }
   }
   .movies_loader {
     @for $i from 1 through 3 {
@@ -192,6 +196,15 @@ button {
         }
       }
     }
+  }
+  .warn_tag {
+    font-weight: 600;
+    color: tomato;
+    background: rgba(255, 99, 71, 0.1);
+    // border: 1px solid tomato;
+    padding: 9px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
   }
 }
 

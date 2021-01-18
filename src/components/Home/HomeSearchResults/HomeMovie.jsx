@@ -5,7 +5,9 @@ export default function HomeMovie({ movie, nomination = false }) {
   const { dispatchStore, store } = useHomeContext();
 
   const nominate = () => {
-    dispatchStore({ type: "NOMINATE", data: movie });
+    store.nominatedMovies?.length < 5
+      ? dispatchStore({ type: "NOMINATE", data: movie })
+      : alert("You can't make more than 5 nominations.");
   };
   const unNominate = () => {
     dispatchStore({ type: "UN_NOMINATE", data: movie });

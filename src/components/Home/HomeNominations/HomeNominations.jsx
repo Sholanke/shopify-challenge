@@ -21,6 +21,9 @@ export default function HomeNominations() {
         )}
       </p>
       <div ref={nominationsRef}>
+        {nominatedMovies.length === 5 && (
+          <p className="warn_tag">You have made 5 Nominations.</p>
+        )}
         {nominatedMovies.map((movie) => (
           <HomeMovie movie={movie} nomination />
         ))}
