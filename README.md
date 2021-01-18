@@ -3,16 +3,12 @@
 ## Screen Shots
 
 ![Screen Shot](/app-shots/screen-shot-1.png)
-Format: ![Alt Text](url)
 
 ![Screen Shot](/app-shots/screen-shot-2.png)
-Format: ![Alt Text](url)
 
 ![Screen Shot](/app-shots/screen-shot-3.png)
-Format: ![Alt Text](url)
 
 ![Screen Shot](/app-shots/screen-shot-4.png)
-Format: ![Alt Text](url)
 
 # Getting Started with Create React App
 
