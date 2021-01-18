@@ -5,6 +5,10 @@ export default function search(s, p = "1") {
     const url = `http://www.omdbapi.com/?apikey=ce28a31a&s=${s}&page=${p}`;
     fetch(url)
       .then((res) => res.json())
-      .then(resolve);
+      .then(resolve)
+      .catch((err) => {
+        console.log(err);
+        reject(err);
+      });
   });
 }

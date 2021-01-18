@@ -29,11 +29,17 @@ export default function HomeSearchResults() {
 
   return (
     <div>
-      <p className="col_title">Search Results</p>
+      <p className="col_title">
+        Search Results{" "}
+        {searchResults?.totalResults ? (
+          <span>{`${searchResults.totalResults} Results Found`}</span>
+        ) : (
+          false
+        )}
+      </p>
       {searchResults?.Search?.map((movie) => (
         <HomeMovie movie={movie} key={movie.imdbID} />
       ))}
-      <br />
       {isLoading && searchResults?.Search?.length > 0 && (
         <div className="movies_loader">
           <HomeMovieLoader />
@@ -42,24 +48,25 @@ export default function HomeSearchResults() {
         </div>
       )}
       {isLoading && searchResults?.Search?.length < 0 && searchValue && (
-        <Error>Loading results, just a sec</Error>
+        <ErrorState>Loading results, just a sec</ErrorState>
       )}
       {isLoading && !searchResults && searchValue && (
-        <Error>Loading results, just a sec</Error>
+        <ErrorState>Loading results, just a sec</ErrorState>
       )}
       {isLoading && searchResults?.Error && searchValue && (
-        <Error>Errr, {searchResults?.Error}</Error>
+        <ErrorState>Errr, {searchResults?.Error}</ErrorState>
       )}
-      {!searchValue && <Error>Your search Results will appear here.</Error>}
-      <br />
+      {!searchValue && (
+        <ErrorState>Your search Results will appear here.</ErrorState>
+      )}
     </div>
   );
 }
 
-function Error({ children }) {
+export function ErrorState({ children, src = "/assets/icons/nothing.svg" }) {
   return (
     <div className="_nothing">
-      <img src="/assets/icons/nothing.svg" alt="" srcset="" />
+      <img src={src} alt="" srcSet="" />
       <p className="__text">{children}</p>
     </div>
   );
